@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Application Form</title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui.structure.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui.theme.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="js/jquery-ui.js"> </script>
+        <script src="js/bootstrap.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>
+		<script src="js/script.js"> </script>
+    </head>
+<body>
+    <header>
+        <img src="images/header.PNG" >        
+    </header>
+    <div id="container">
+        <div id="startPage" class="jumbotron"> 
+            <h1>Welcome to tek syndicate</h1>
+            <p>Click to apply!</p>
+            <button id="applyButton" type="button" class="btn btn-primary btn-lg">Apply</button>
+        </div>
+        <form action="#" method="get" id="applicantInformation" hidden="hidden" >
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Applicant Information</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="lName">Last name:</label>
+                    <input class="form-control" type="text" name="lName" id="lName" required minlength="1" title="Please enter you last name." />
+                </div>
+                <div class="col-sm-3">
+                    <label for="fName">First name:</label>
+                    <input class="form-control" type="text" name="fName" id="fName" required minlength="1" title="Please enter your first name." />
+                </div>
+                <div class="col-sm-3">
+                    <label for="mName">Middle initial:</label>
+                    <input class="form-control" type="text" name="mName" id="mName" required maxlength="1" title="Please enter your middle initial." />
+                </div>
+                <div class="col-sm-3">
+                    <label for="Date">Birth Date:</label>
+                    <input class="form-control date" type="text" name="Date" id="date" required title="Please enter your birthday." />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <label for="address">Street address:</label>
+                    <input class="form-control" type="text" name="address" id="address" required title="Please enter your address." />
+                </div>
+                <div class="col-sm-4">
+                    <label for="city">City:</label>
+                    <input class="form-control" type="text" name="city" id="city" required title="Please enter your city."/>
+                </div>
+                <div class="col-sm-1">
+                    <label for="state">State:</label>
+                    <input class="form-control" type="text" name="state" id="state" maxlength="2" required title="Please enter your state." />
+                </div>
+                <div class="col-sm-1">
+                    <label for="zip">Zip:</label>
+                    <input class="form-control" type="number" name="zip" id="zip" required min="10000" max="99999" />
+                </div>
+            </div>
+                <div class="row">
+                <div class="col-sm-5">
+                    <label for="phone">Phone:</label>
+                    <input class="form-control" type="number" min="1000000000" max="9999999999" maxlength="10" name="phone" id="phone" required title="Please enter your phone number." pattern="/^(1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/" />
+                </div>
+                <div class="col-sm-7">
+                    <label for="email">Email:</label>
+                    <input class="form-control" type="email" name="email" id="email" required email title="Please enter a valid email." />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label for="dateAvailable">Date available:</label>
+                    <input class="form-control date" type="text" name="dateAvailable" id="dateAvailable" required title="Please enter the first date you can work." />
+                </div>
+                <div class="col-sm-4">
+                    <label for="ssn">SSN:</label>
+                    <input class="form-control" type="text" name="ssn" id="ssn" required min="100000000" max="999999999" title="Please enter a valid SSN" pattern="/^([0-6]\d{2}|7[0-6]\d|77[0-2])([ \-]?)(\d{2})\2(\d{4})$/"/>
+                </div>
+                <div class="col-sm-4">
+                    <label for="salary">Desired salary:</label>
+                    <input class="form-control" type="number" name="salary" id="salary" required title="Please enter your desired salary." />
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <label for="appliedPosition">Position applied for:</label>
+                <input class="form-control" type="text" name="appliedPosition" id="appliedPosition" required />                
+            </div>
+            <div class="row">
+                <div class="col-sm-6" id="citizen">
+                    <label for="citizen">Are you a citizen of the United States?</label><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="citizen" value="Yes" id="citizenYes" checked="checked" />Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="citizen" value="No" id="citizenNo" />No<br/>
+                </div>
+                <div class="col-sm-6" id="authorized" hidden="hidden">
+                    <label for="authorized">Are you authorized to work in the US?</label><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="authorized" value="Yes" id="authorizedYes" checked="checked" />Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="authorized" value="No" id="authorizedNo" />No<br/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <label>Have you ever worked for this company?</label><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="worked" value="Yes" id="workedYes" />Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="worked" value="No" id="workedNo" checked="checked"/>No<br/>
+                </div>
+                <div class="col-sm-6" id="workedWhen" hidden="hidden">
+                    <label for="workedWhen">When did you work?</label>
+                    <input class="form-control date" type="text" name="workedWhen" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <label for="felony">Have you ever been convicted of a felony?</label><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="felony" value="Yes" id="felonyYes" />Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="felony" value="No" id="felonyNo" checked="checked"/>No<br/>
+                </div>
+                <div class="col-sm-6" id="felonyExplanation" hidden="hidden">
+                    <label for="felonyExplanation">Please explain your felony.</label>
+                    <input class="form-control" type="text" name="felonyExplanation" />
+                </div>
+            </div>
+            <div></div>
+            <div class="row" id="buttonsInfo"><br><br>
+                <div class="col-sm-1">
+                    <button id="backButtonInfo" type="button" class="btn btn-primary btn-md">Back</button>
+                </div>
+                <div class="col-sm-10">
+                </div>
+                <div class="col-sm-1">
+                    <button id="nextButtonInfo" type="button" class="btn btn-primary btn-md nextButton">Next</button>
+                </div>
+            </div>
+        </form>
+        <form action="#" method="get" id="education" hidden="hidden">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Education Information</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6"> 
+                    <label for="highSchool">High School: </label>
+                    <input class="form-control" type="text" name="highSchool" id="highSchool" required title="Please enter your high school name." />
+                </div>
+                <div class="col-sm-6"> 
+                    <label for="hsAddress">Address:</label>
+                    <input class="form-control" type="text" name="hsAddress" id="hsAddress" required title="Please enter your high school address." />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2"> 
+                    <label for="hsFrom">From:</label>
+                    <input class="form-control date" type="text" name="hsFrom" id="hsFrom" required title="Please enter start date." />
+                </div>
+                <div class="col-sm-2"> 
+                    <label for="hsTo">To:</label>
+                    <input class="form-control date" type="text" name="hsTo" id="hsTo" required title="Please enter end date." />
+                </div>
+                <div class="col-sm-2"> 
+                    <label for="hsGrad">Did you graduate?</label><br/>&nbsp;
+                    <input type="radio" name="hsGrad" value="Yes" id="gradYes" checked="checked" />Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="hsGrad" value="No" id="gradNo" />No<br/>
+                </div>
+                <div class="col-sm-6"> 
+                    <label for="hsDiploma">Diploma:</label>
+                    <input class="form-control" type="text" name="hsDiploma" id="hsDiploma" required title="Please enter your diploma." />
+                </div>
+            </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="college">Did you attend college?</label><br/>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="college" value="Yes" id="attendCollegeYes" />Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="college" value="No" id="attendCollegeNo" checked="checked" />No<br/>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="other">Do you have any other certifications/degrees?</label><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="other" value="Yes" id="attendOtherYes" />Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="other" value="No" id="attendOtherNo" checked="checked" />No<br/>
+                    </div>
+                </div>
+            <div id="collegeInfo" hidden="hidden"><br><br>
+                <div class="row">
+                    <div class="col-sm-6"> 
+                        <label for="college">College: </label>
+                        <input class="form-control" type="text" name="college" id="college"/>
+                    </div>
+                    <div class="col-sm-6"> 
+                        <label for="collegeAddress">Address:</label>
+                        <input class="form-control" type="text" name="collegeAddress" id="collegeAddress" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2"> 
+                        <label for="collegeFrom">From:</label>
+                        <input class="form-control date" type="text" name="collegeFrom" id="collegeFrom" />
+                    </div>
+                    <div class="col-sm-2"> 
+                        <label for="collegeTo">To:</label>
+                        <input class="form-control date" type="text" name="collegeTo" id="collegeTo" />
+                    </div>
+                    <div class="col-sm-2"> 
+                        <label for="collegeGrad">Did you graduate?</label><br/>&nbsp;
+                        <input type="radio" name="collegeGrad" value="Yes" id="gradCollegeYes" checked="checked" />Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="collegeGrad" value="No" id="gradCollegeNo" />No<br/>
+                    </div>
+                    <div class="col-sm-6"> 
+                        <label for="collegeDegree">Degree:</label>
+                        <input class="form-control" type="text" name="collegeDegree" id="collegeDegree" />
+                    </div>
+                </div>
+            </div>
+            <div id="otherInfo" hidden="hidden"><br><br>
+                <div class="row">
+                    <div class="col-sm-6"> 
+                        <label for="other">Other: </label>
+                        <input class="form-control" type="text" name="other" />
+                    </div>
+                    <div class="col-sm-6"> 
+                        <label for="otherAddress">Address:</label>
+                        <input class="form-control" type="text" name="otherAddress" />
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="col-sm-2"> 
+                        <label for="otherFrom">From:</label>
+                        <input class="form-control date" type="text" name="otherFrom" />
+                    </div>
+                    <div class="col-sm-2"> 
+                        <label for="otherTo">To:</label>
+                        <input class="form-control date" type="text" name="otherTo" />
+                    </div>
+                    <div class="col-sm-2"> 
+                        <label for="otherGrad">Did you graduate?</label><br/>&nbsp; 
+                        <input type="radio" name="otherGrad" value="Yes" id="gradotherYes" checked="checked" />Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="otherGrad" value="No" id="gradotherNo" />No<br/>
+                    </div>
+                    <div class="col-sm-6"> 
+                        <label for="otherDegree">Degree:</label>
+                        <input class="form-control" type="text" name="otherDegree" />
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="buttonsEducation"><br><br>
+                <div class="col-sm-1">
+                    <button id="backButtonEducation" type="button" class="btn btn-primary btn-md">Back</button>
+                </div>
+                <div class="col-sm-10">
+                </div>
+                <div class="col-sm-1">
+                    <button id="nextButtonEducation" type="button" class="btn btn-primary btn-md nextButton">Next</button>
+                </div>
+            </div>
+        </form>
+        <form action="#" method="get" id="references" hidden="hidden">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>References</h2>
+                </div>
+            </div>
+            <div id="referenceOne">
+                <div class="row">
+                    <div class="col-sm-6"> 
+                        <label for="fullName">Full Name:</label>
+                        <input class="form-control" type="text" name="fullName" id="fullName" required title="Please enter a reference's name." />
+                    </div>
+                    <div class="col-sm-6"> 
+                        <label for="relationship">Relationship:</label>
+                        <input class="form-control" type="text" name="relationship" id="relationship" required title="Please enter your relationship to the reference." />
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="col-sm-6"> 
+                        <label for="company">Company:</label>
+                        <input class="form-control" type="text" name="company" id="company" required title="Please enter the company the reference works at." />
+                    </div>
+                    <div class="col-sm-6"> 
+                        <label for="phone">Phone:</label>
+                        <input class="form-control" type="number" min="1000000000" max="9999999999" maxlength="10" name="phone" id="phoneRef1" required pattern="/^(1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/" title="Please enter a valid phone number" />
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="col-sm-12"> 
+                        <label for="address">Address:</label>
+                        <input class="form-control" type="text" name="address" id="addressRef1" required title="Please enter an address for the reference." />
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="col-sm-12"> 
+                        <label for="ref2">Would you like to include another reference?</label><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="ref2" value="Yes" id="ref2Yes" />Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="ref2" value="No" id="ref2No" checked="checked" />No<br/>
+                    </div>
+                </div>
+            </div>
+            <div id="referencesTwo" hidden="hidden"><br><br>
+                <div class="row">
+                    <div class="col-sm-6"> 
+                        <label for="fullName">Full Name:</label>
+                        <input class="form-control" type="text" name="fullName" required />
+                    </div>
+                    <div class="col-sm-6"> 
+                        <label for="relationship">Relationship:</label>
+                        <input class="form-control" type="text" name="relationship" required />
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="col-sm-6"> 
+                        <label for="company">Company:</label>
+                        <input class="form-control" type="text" name="company" required />
+                    </div>
+                    <div class="col-sm-6"> 
+                        <label for="phone">Phone:</label>
+                        <input class="form-control" type="number" min="1000000000" max="9999999999"  name="phone" required />
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="col-sm-12"> 
+                        <label for="address">Address:</label>
+                        <input class="form-control" type="text" name="address" required />
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="col-sm-12"> 
+                        <label for="ref3">Would you like to include another reference?</label><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="ref3" value="Yes" id="ref3Yes" />Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="ref3" value="No" id="ref3No" checked="checked" />No<br/>
+                    </div>
+                </div>
+            </div>
+            <div id="referencesThree" hidden="hidden"><br><br>
+                <div class="row">
+                    <div class="col-sm-6"> 
+                        <label for="fullName">Full Name:</label>
+                        <input class="form-control" type="text" name="fullName" required />
+                    </div>
+                    <div class="col-sm-6"> 
+                        <label for="relationship">Relationship:</label>
+                        <input class="form-control" type="text" name="relationship" required />
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="col-sm-6"> 
+                        <label for="company">Company:</label>
+                        <input class="form-control" type="text" name="company" required />
+                    </div>
+                    <div class="col-sm-6"> 
+                        <label for="phone">Phone:</label>
+                        <input class="form-control" type="number" min="1000000000" max="9999999999"  name="phone" required />
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="col-sm-12"> 
+                        <label for="address">Address:</label>
+                        <input class="form-control" type="text" name="address" required />
+                    </div> 
+                </div>
+            </div>
+            <div class="row" id="buttonsReferences"><br><br>
+                <div class="col-sm-1">
+                    <button id="backButtonReferences" type="button" class="btn btn-primary btn-md">Back</button>
+                </div>
+                <div class="col-sm-10">
+                </div>
+                <div class="col-sm-1">
+                    <button id="nextButtonReferences" type="button" class="btn btn-primary btn-md nextButton">Next</button>
+                </div>
+            </div>
+        </form>
+        <form action="#" method="get" id="previousEmployment" hidden="hidden">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Previous Employment</h2>
+                </div>
+            </div>
+            <div id="previousEmploymentOne">
+                <div class="row">
+                    <div class="col-sm-8"> 
+                        <label for="company">Company:</label>
+                        <input class="form-control" type="text" name="company" id="company1" required title="Please enter a company you worked for in the past." />
+                    </div>
+                    <div class="col-sm-4"> 
+                        <label for="phone">Phone:</label>
+                        <input class="form-control" type="number" min="1000000000" max="9999999999" maxlength="10" name="phone" id="phoneCo1" required title="Please enter a valid phone number." pattern="/^(1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/"/>
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="col-sm-8"> 
+                        <label for="address">Address:</label>
+                        <input class="form-control" type="text" name="address" id="addressCo1" required title="Please enter an address." />
+                    </div>
+                    <div class="col-sm-4"> 
+                        <label for="supervisor">Supervisor:</label>
+                        <input class="form-control" type="text" name="supervisor" id="supervisor1" required title="Please enter a supervisor's name." />
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="col-sm-6"> 
+                <label for="title">Job Title:</label>
+                <input class="form-control" type="text" name="title" id="title1" required title="Please enter your job title." />
+                    </div>
+                    <div class="col-sm-3"> 
+                <label for="startSalary">Starting salary:</label>
+                <input class="form-control" type="number" name="startSalary" id="startSalary1" required title="Please enter your starting salary." />
+                    </div>
+                    <div class="col-sm-3"> 
+                <label for="endSalary">Ending salary:</label>
+                <input class="form-control" type="number" name="endSalary" id="endSalary1" required title="Please enter your ending salary." />
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="col-sm-12"> 
+                        <label for="responsibilities">Responsibilities:</label>
+                        <input class="form-control" type="text" name="responsibilities" id="responsibilities1" required title="Please enter your responsibilities." />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2"> 
+                        <label for="from">From:</label>
+                        <input class="form-control date" type="text" name="from" id="from1" required title="Please enter the day you started." />
+                    </div>
+                    <div class="col-sm-2"> 
+                        <label for="to">To:</label>
+                        <input class="form-control date" type="text" name="to" id="to1" required title="Please select the day you quit." />
+                    </div>
+                    <div class="col-sm-8"> 
+                        <label for="reason">Reason for leaving:</label>
+                        <input class="form-control" type="text" name="reason" id="reasonLeave1" required title="Please describe why you left." />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6"> 
+                        <label for="contact1">May we contact your previous supervisor for a reference?</label><br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="contact1" value="Yes" id="contactSupervisorYes" checked="checked" />Yes
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="contact1" value="No" id="contactSupervisorNo" />No<br/>
+                    </div>
+                    <div class="col-sm-6"> 
+                        <label for="prevEmpTwo">Do you have a second prior job to add?</label><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="prevEmpTwo" value="Yes" id="prevEmpTwoYes" />Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="prevEmpTwo" value="No" id="prevEmpTwoNo" checked="checked" />No<br/>
+                    </div>
+                </div> 
+            </div>
+            <div id="previousEmploymentTwo" hidden="hidden"><br><br>
+                <div class="row">
+                    <div class="col-sm-8"> 
+                        <label for="company">Company:</label>
+                        <input class="form-control" type="text" name="company" required />
+                    </div>
+                    <div class="col-sm-4"> 
+                        <label for="phone">Phone:</label>
+                        <input class="form-control" type="number" min="1000000000" max="9999999999"  name="phone" required />
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="col-sm-8"> 
+                        <label for="address">Address:</label>
+                        <input class="form-control" type="text" name="address" required />
+                    </div>
+                    <div class="col-sm-4"> 
+                        <label for="supervisor">Supervisor:</label>
+                        <input class="form-control" type="text" name="supervisor" required />
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="col-sm-6"> 
+                <label for="title">Job Title:</label>
+                <input class="form-control" type="text" name="title" required />
+                    </div>
+                    <div class="col-sm-3"> 
+                <label for="startSalary">Starting salary:</label>
+                <input class="form-control" type="number" name="startSalary" required />
+                    </div>
+                    <div class="col-sm-3"> 
+                <label for="endSalary">Ending salary:</label>
+                <input class="form-control" type="number" name="endSalary" required />
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="col-sm-12"> 
+                        <label for="responsibilities">Responsibilities:</label>
+                        <input class="form-control" type="text" name="responsibilities" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2"> 
+                        <label for="from">From:</label>
+                        <input class="form-control date" type="text" name="from" required />
+                    </div>
+                    <div class="col-sm-2"> 
+                        <label for="to">To:</label>
+                        <input class="form-control date" type="text" name="to" required />
+                    </div>
+                    <div class="col-sm-8"> 
+                        <label for="reason">Reason for leaving:</label>
+                        <input class="form-control" type="text" name="reason" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12"> 
+                        <label for="contact">May we contact your previous supervisor for a reference?</label><br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="contact" value="Yes" id="contactYes" checked="checked" />Yes
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="contact" value="No" id="contactNo" />No<br/>
+                    </div>
+                </div> 
+            </div>
+            <div class="row" id="buttonsPrevEmp"><br><br>
+                <div class="col-sm-1">
+                    <button id="backButtonPrevEmp" type="button" class="btn btn-primary btn-md">Back</button>
+                </div>
+                <div class="col-sm-10">
+                </div>
+                <div class="col-sm-1">
+                    <button id="nextButtonPrevEmp" type="button" class="btn btn-primary btn-md nextButton">Next</button>
+                </div>
+            </div>
+        </form>
+        <form action="#" method="get" id="militaryService" hidden="hidden">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Military Service</h2>
+                </div>
+            </div>
+            <div class="col-sm-12"> 
+                <label for="military">Have you served in the military?</label><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="military" value="Yes" id="militaryYes" />Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="military" value="No" id="militaryNo" checked="checked" />No<br/>
+            </div>
+            <div id="military" hidden="hidden">
+                <div class="row">
+                    <div class="col-sm-6"> 
+                        <label for="branch">Branch:</label>
+                        <input class="form-control" type="text" name="responsibilities" />
+                    </div>
+                    <div class="col-sm-3"> 
+                        <label for="start">From:</label>
+                        <input class="form-control date" type="text" name="start" />
+                    </div>
+                    <div class="col-sm-3"> 
+                        <label for="end">To:</label>
+                        <input class="form-control date" type="text" name="end" />
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="col-sm-6"> 
+                        <label for="discharge">Rank at discharge:</label>
+                        <input class="form-control" type="text" name="discharge" />
+                    </div>
+                    <div class="col-sm-6"> 
+                        <label for="dischargeType">Type of discharge:</label>
+                        <input class="form-control" type="text" name="dischargeType" />
+                    </div> 
+                </div>
+                <div class="row">     
+                    <div class="col-sm-12"> 
+                        <label for="dischargeReason">if other than honorable, explain:</label>
+                        <input class="form-control" type="text" name="dischargeReason" />
+                    </div> 
+                </div>
+            </div>
+            <div class="row" id="buttonsMilitary"><br><br>
+                <div class="col-sm-1">
+                    <button id="backButtonMilitary" type="button" class="btn btn-primary btn-md">Back</button>
+                </div>
+                <div class="col-sm-10">
+                </div>
+                <div class="col-sm-1">
+                    <button id="nextButtonMilitary" type="button" class="btn btn-primary btn-md nextButton">Next</button>
+                </div>
+            </div>
+        </form>
+        <form action="#" method="get" id="signature" hidden="hidden">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Verification and Legal</h2><br><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12" id="disclaimers"> 
+                    <p>I certify that my answers are true and complete to the best of my knowledge.</p>
+                    <p>If this application leads to employment, I understand that false or misleading information in my application or interview may result in my release.</p>
+                </div>
+            </div>
+            <div class="row"><br><br><br><br>
+                <div class="col-sm-6"> 
+                    <label for="signature">Digital Signature</label> 
+                    <input class="form-control" type="text" name="signature" id="signatureVerification" required title="Please enter your name as your digital signature." />
+                </div>
+                <div class="col-sm-6"> 
+                    <label for="date">Date:</label>
+                    <input class="form-control date" type="text" name="date" id="dateVerification" required title="Please enter today's date." />
+                </div> 
+            </div>
+            <div class="row" id="buttonsSignature"><br><br><br><br>
+                <div class="col-sm-1">
+                    <button id="backButtonSignature" type="button" class="btn btn-primary btn-md">Back</button>
+                </div>
+                <div class="col-sm-9">
+                </div>
+                <div class="col-sm-2">
+                    <button id="nextButtonSignature" type="button" class="btn btn-primary btn-md nextButton">Submit Application</button>
+                </div>
+            </div>
+        </form>
+        <form action="#" method="get" id="submission" class="jumbotron" hidden="hidden"> 
+            <h1>Thank you for applying</h1>
+            <button id="returnButton" type="button" class="btn btn-primary btn-lg">Return</button>
+        </form>
+    </div>
+    <div>
+        <div id="dialog-confirm" title="Reset form?" hidden="hidden">
+            <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Your progress will not be saved and the form will reset. Are you sure you wish to continue?</p>
+        </div>
+    </div>
+    <footer>
+        <img src="images/footer.PNG" height="461" >
+    </footer>
+</body>
+</html>

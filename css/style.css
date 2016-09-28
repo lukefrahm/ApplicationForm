@@ -1,0 +1,75 @@
+body {
+    background-color: #222;
+}
+
+header {
+    width: 70%;
+    margin: 0px auto 25px auto;
+    color: #fff;
+}
+
+header img {
+    width: 100%;
+}
+
+#container {
+    width: 70%;
+    margin: 0px auto;
+    min-height: 625px;
+    background-color: ivory;
+}
+
+footer {
+    width: 70%;
+    margin: 25px auto;
+    color: #fff;
+}
+
+footer img {
+    width: 100%;
+}
+
+.jumbotron {
+    text-align: center;
+    color: #444;
+}
+
+.nextButton {
+    float: right;
+}
+
+.btn {
+    background-color: #222;
+}
+
+.btn:hover {
+    background-color: #ddd;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    font-weight: 700;
+}
+
+label.error {
+    float: none;
+    color: red;
+    padding-left: .5em;
+    vertical-align: top;
+    display: block;
+}
+
+.ui-button {
+    border: 1px solid #aaaaaa;
+    color: #FF0000;
+    background-color: #fff;
+}
+
+#disclaimers p {
+    color: #000;
+}
+
+p {
+    text-align: center;
+}
